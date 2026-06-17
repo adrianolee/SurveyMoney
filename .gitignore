@@ -11,3 +11,5 @@ build/
 
 # Duplicated handoff archive; contents are tracked under stitch-handoff/
 SurveyMoney-STITCH-handoff.zip
+
+.vercel

@@ -1,0 +1,7 @@
+.git/
+SurveyMoney-STITCH-handoff.zip
+*.log
+node_modules/
+dist/
+build/
+.cache/
