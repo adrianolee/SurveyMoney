@@ -1,0 +1,13 @@
+# Local and generated files
+.DS_Store
+Thumbs.db
+*.log
+
+# Dependency and build outputs
+node_modules/
+dist/
+build/
+.cache/
+
+# Duplicated handoff archive; contents are tracked under stitch-handoff/
+SurveyMoney-STITCH-handoff.zip
