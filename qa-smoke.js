@@ -88,11 +88,11 @@ const result = vm.runInContext(`
   const monetizationHtml = document.getElementById("app").innerHTML;
   const monetizationOverlayOk = monetizationShown
     && transient.interstitial.nextRoute === "/quick-complete"
-    && transient.interstitial.url === "https://cart.minigame.vip/game/"
+    && transient.interstitial.url === "https://ap9hqw.minigame.com/main"
     && transient.interstitial.title === "Earn more cash by playing games"
     && transient.interstitial.closeText === "X"
     && monetizationHtml.includes('class="interstitial-frame"')
-    && monetizationHtml.includes('src="https://cart.minigame.vip/game/"');
+    && monetizationHtml.includes('src="https://ap9hqw.minigame.com/main"');
   transient.interstitial = null;
 
   transient.withdrawAmount = "100.00";
@@ -136,7 +136,7 @@ const expected = {
   spinLabels: "$0.01|$0.02|$0.03|$0.05|$0.10|Bonus|Extra|Try",
   spinAlignment: true,
   tryAgainModalCopyOk: true,
-  monetizationUrl: "https://cart.minigame.vip/game/",
+  monetizationUrl: "https://ap9hqw.minigame.com/main",
   monetizationOverlayOk: true,
   withdrawError: "",
   balanceAfterWithdraw: 0,

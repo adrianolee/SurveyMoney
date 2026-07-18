@@ -5,7 +5,7 @@ const CONFIG_PATH = "./monetization-config.json";
 const defaultRuntimeConfig = {
   monetization: {
     enabled: true,
-    interstitialUrl: "https://cart.minigame.vip/game/",
+    interstitialUrl: "https://ap9hqw.minigame.com/main",
     title: "Earn more cash by playing games",
     closeText: "X"
   }
