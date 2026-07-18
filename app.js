@@ -1,6 +1,7 @@
 const STORAGE_KEY = "surveyMoneyState";
 const MIN_WITHDRAWAL = 100;
 const CONFIG_PATH = "./monetization-config.json";
+const SPIN_GAME_URL_TEMPLATE = "https://s.gamifyspace.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did={gaid}";
 
 const defaultRuntimeConfig = {
   monetization: {
@@ -87,6 +88,14 @@ function getMonetizationConfig() {
     title: config.title || "Earn more cash by playing games",
     closeText: config.closeText || "X"
   };
+}
+
+function buildSpinGameUrl(search = location.search, hash = location.hash) {
+  const pageParams = new URLSearchParams(search || "");
+  const hashQuery = String(hash || "").split("?")[1] || "";
+  const hashParams = new URLSearchParams(hashQuery);
+  const gaid = pageParams.get("gaid") || pageParams.get("did") || hashParams.get("gaid") || hashParams.get("did");
+  return gaid ? SPIN_GAME_URL_TEMPLATE.replace("{gaid}", encodeURIComponent(gaid)) : SPIN_GAME_URL_TEMPLATE;
 }
 
 function loadState() {
@@ -868,7 +877,7 @@ function handleClick(event) {
   }
 
   if (action === "spinPage") {
-    routeTo("/spin");
+    location.href = buildSpinGameUrl();
     return;
   }
 

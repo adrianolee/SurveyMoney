@@ -28,6 +28,7 @@ const context = {
   Array,
   Object,
   Error,
+  URLSearchParams,
   localStorage: {
     getItem(key) {
       return storage.has(key) ? storage.get(key) : null;
@@ -42,7 +43,7 @@ const context = {
       storage.clear();
     }
   },
-  location: { hash: "#/home" },
+  location: { hash: "#/home", search: "", href: "" },
   window: {
     addEventListener() {}
   },
@@ -95,6 +96,14 @@ const result = vm.runInContext(`
     && monetizationHtml.includes('src="https://ap9hqw.minigame.com/main"');
   transient.interstitial = null;
 
+  const spinGameUrlTemplate = buildSpinGameUrl("", "#/home");
+  const spinGameUrlWithGaid = buildSpinGameUrl("?gaid=qa device/id", "#/home");
+  const spinGameUrlWithDid = buildSpinGameUrl("", "#/home?did=hash-device");
+  location.search = "?gaid=click-device";
+  handleClick({ target: { closest: () => ({ dataset: { action: "spinPage" } }) } });
+  const spinClickUrl = location.href;
+  location.search = "";
+
   transient.withdrawAmount = "100.00";
   transient.withdrawEmail = "qa@example.com";
   const withdrawError = submitWithdrawal(state);
@@ -115,6 +124,10 @@ const result = vm.runInContext(`
     tryAgainModalCopyOk,
     monetizationUrl: monetizationConfig.interstitialUrl,
     monetizationOverlayOk,
+    spinGameUrlTemplate,
+    spinGameUrlWithGaid,
+    spinGameUrlWithDid,
+    spinClickUrl,
     withdrawError,
     balanceAfterWithdraw: state.withdrawableBalance,
     withdrawalRecords: state.withdrawalRecords.length
@@ -138,6 +151,10 @@ const expected = {
   tryAgainModalCopyOk: true,
   monetizationUrl: "https://ap9hqw.minigame.com/main",
   monetizationOverlayOk: true,
+  spinGameUrlTemplate: "https://s.gamifyspace.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did={gaid}",
+  spinGameUrlWithGaid: "https://s.gamifyspace.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did=qa%20device%2Fid",
+  spinGameUrlWithDid: "https://s.gamifyspace.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did=hash-device",
+  spinClickUrl: "https://s.gamifyspace.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did=click-device",
   withdrawError: "",
   balanceAfterWithdraw: 0,
   withdrawalRecords: 1
