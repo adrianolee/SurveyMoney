@@ -1,7 +1,7 @@
 const STORAGE_KEY = "surveyMoneyState";
 const MIN_WITHDRAWAL = 100;
 const CONFIG_PATH = "./monetization-config.json";
-const SPIN_GAME_URL = "https://s.arventrat.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did=";
+const SPIN_GAME_URL = "https://s.norviques.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did=";
 
 const defaultRuntimeConfig = {
   monetization: {
