@@ -99,6 +99,8 @@ const result = vm.runInContext(`
   const spinGameUrlTemplate = buildSpinGameUrl("", "#/home");
   const spinGameUrlWithGaid = buildSpinGameUrl("?gaid=qa device/id", "#/home");
   const spinGameUrlWithDid = buildSpinGameUrl("", "#/home?did=hash-device");
+  const homeSpinCopyOk = homePage(state).includes("Win Cash on Every Spin")
+    && !homePage(state).includes("Available Spins:");
   location.search = "?gaid=click-device";
   handleClick({ target: { closest: () => ({ dataset: { action: "spinPage" } }) } });
   const spinClickUrl = location.href;
@@ -127,6 +129,7 @@ const result = vm.runInContext(`
     spinGameUrlTemplate,
     spinGameUrlWithGaid,
     spinGameUrlWithDid,
+    homeSpinCopyOk,
     spinClickUrl,
     withdrawError,
     balanceAfterWithdraw: state.withdrawableBalance,
@@ -154,6 +157,7 @@ const expected = {
   spinGameUrlTemplate: "https://s.arventrat.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did=",
   spinGameUrlWithGaid: "https://s.arventrat.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did=qa%20device%2Fid",
   spinGameUrlWithDid: "https://s.arventrat.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did=hash-device",
+  homeSpinCopyOk: true,
   spinClickUrl: "https://s.arventrat.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did=click-device",
   withdrawError: "",
   balanceAfterWithdraw: 0,

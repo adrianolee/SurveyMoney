@@ -398,7 +398,7 @@ function homePage(state) {
             kind: "spin",
             title: "Lucky Spin",
             subtitle: "Spin & win bonus rewards",
-            earn: `Available Spins: ${state.availableSpins}`,
+            earn: "Win Cash on Every Spin",
             detail: "",
             completed: 0,
             total: 1,
