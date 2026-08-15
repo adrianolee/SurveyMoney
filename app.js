@@ -408,7 +408,7 @@ function homePage(state) {
           })}
           <picture class="rewards-banner">
             <img
-              src="./assets/home-rewards-banner.png?v=2.0.5"
+              src="./assets/home-rewards-banner.png?v=2.0.6"
               alt="Redeem rewards, earn more points, and download now to start earning"
             />
           </picture>
