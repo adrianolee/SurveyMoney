@@ -406,6 +406,13 @@ function homePage(state) {
             action: "spinPage",
             art: artWheel()
           })}
+          <picture class="rewards-banner">
+            <source media="(max-width: 410px)" srcset="./assets/home-rewards-banner-mobile.png?v=2.0.4" />
+            <img
+              src="./assets/home-rewards-banner.png?v=2.0.4"
+              alt="Redeem rewards, earn more points, and download now to start earning"
+            />
+          </picture>
         </div>
       </div>
       ${welcomeModal(state)}

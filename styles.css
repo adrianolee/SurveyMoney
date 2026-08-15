@@ -401,6 +401,34 @@ button:disabled {
   margin-top: 16px;
 }
 
+.rewards-banner {
+  display: block;
+  width: 100%;
+  height: 122px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.rewards-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 410px) {
+  .rewards-banner {
+    height: 139px;
+  }
+}
+
+@media (max-width: 380px) {
+  .rewards-banner {
+    height: 136px;
+  }
+}
+
 .survey-card,
 .spin-card {
   overflow: hidden;
