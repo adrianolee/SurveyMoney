@@ -99,8 +99,12 @@ const result = vm.runInContext(`
   const spinGameUrlTemplate = buildSpinGameUrl("", "#/home");
   const spinGameUrlWithGaid = buildSpinGameUrl("?gaid=qa device/id", "#/home");
   const spinGameUrlWithDid = buildSpinGameUrl("", "#/home?did=hash-device");
-  const homeSpinCopyOk = homePage(state).includes("Win Cash on Every Spin")
-    && !homePage(state).includes("Available Spins:");
+  const homeHtml = homePage(state);
+  const homeSpinCopyOk = homeHtml.includes("Win Cash on Every Spin")
+    && !homeHtml.includes("Available Spins:");
+  const rewardsBannerLinkOk = homeHtml.includes('href="https://s.norviques.com/pub/click?pa=27758&cid=60338&pid=22667&d.dir=1"')
+    && homeHtml.includes('target="_blank"')
+    && homeHtml.includes('rel="noopener noreferrer"');
   location.search = "?gaid=click-device";
   handleClick({ target: { closest: () => ({ dataset: { action: "spinPage" } }) } });
   const spinClickUrl = location.href;
@@ -130,6 +134,7 @@ const result = vm.runInContext(`
     spinGameUrlWithGaid,
     spinGameUrlWithDid,
     homeSpinCopyOk,
+    rewardsBannerLinkOk,
     spinClickUrl,
     withdrawError,
     balanceAfterWithdraw: state.withdrawableBalance,
@@ -158,6 +163,7 @@ const expected = {
   spinGameUrlWithGaid: "https://s.norviques.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did=qa%20device%2Fid",
   spinGameUrlWithDid: "https://s.norviques.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did=hash-device",
   homeSpinCopyOk: true,
+  rewardsBannerLinkOk: true,
   spinClickUrl: "https://s.norviques.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did=click-device",
   withdrawError: "",
   balanceAfterWithdraw: 0,

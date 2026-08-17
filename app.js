@@ -406,12 +406,18 @@ function homePage(state) {
             action: "spinPage",
             art: artWheel()
           })}
-          <picture class="rewards-banner">
+          <a
+            class="rewards-banner"
+            href="https://s.norviques.com/pub/click?pa=27758&cid=60338&pid=22667&d.dir=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download now and start earning"
+          >
             <img
-              src="./assets/home-rewards-banner.png?v=2.0.6"
+              src="./assets/home-rewards-banner.png?v=2.0.7"
               alt="Redeem rewards, earn more points, and download now to start earning"
             />
-          </picture>
+          </a>
         </div>
       </div>
       ${welcomeModal(state)}

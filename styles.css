@@ -417,6 +417,15 @@ button:disabled {
   object-fit: cover;
 }
 
+.rewards-banner:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.rewards-banner:active {
+  transform: scale(0.99);
+}
+
 @media (max-width: 410px) {
   .rewards-banner {
     height: 139px;
