@@ -404,14 +404,14 @@ function homePage(state) {
             <picture>
               <source
                 media="(min-width: 431px)"
-                srcset="./assets/home-rewards-banner-wide.gif?v=2.0.10"
+                srcset="./assets/home-rewards-banner-wide.gif?v=2.0.11"
               />
               <source
                 media="(min-width: 381px)"
-                srcset="./assets/home-rewards-banner-medium.gif?v=2.0.10"
+                srcset="./assets/home-rewards-banner-medium.gif?v=2.0.11"
               />
               <img
-                src="./assets/home-rewards-banner.gif?v=2.0.10"
+                src="./assets/home-rewards-banner.gif?v=2.0.11"
                 alt="Lucky Spin, spin and win bonus rewards"
               />
             </picture>
