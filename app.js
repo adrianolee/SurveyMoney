@@ -394,28 +394,16 @@ function homePage(state) {
             action: "startPremium",
             art: artDiamond()
           })}
-          ${surveyCard({
-            kind: "spin",
-            title: "Lucky Spin",
-            subtitle: "Spin & win bonus rewards",
-            earn: "Win Cash on Every Spin",
-            detail: "",
-            completed: 0,
-            total: 1,
-            buttonText: "Spin Now",
-            action: "spinPage",
-            art: artWheel()
-          })}
           <a
             class="rewards-banner"
-            href="https://s.norviques.com/pub/click?pa=27758&cid=60338&pid=22667&d.dir=1"
+            href="https://s.norviques.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did="
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Download now and start earning"
+            aria-label="Play Lucky Spin"
           >
             <img
-              src="./assets/home-rewards-banner.png?v=2.0.7"
-              alt="Redeem rewards, earn more points, and download now to start earning"
+              src="./assets/home-rewards-banner.gif?v=2.0.8"
+              alt="Lucky Spin, spin and win bonus rewards"
             />
           </a>
         </div>
