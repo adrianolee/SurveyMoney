@@ -401,10 +401,20 @@ function homePage(state) {
             rel="noopener noreferrer"
             aria-label="Play Lucky Spin"
           >
-            <img
-              src="./assets/home-rewards-banner.gif?v=2.0.9"
-              alt="Lucky Spin, spin and win bonus rewards"
-            />
+            <picture>
+              <source
+                media="(min-width: 431px)"
+                srcset="./assets/home-rewards-banner-wide.gif?v=2.0.10"
+              />
+              <source
+                media="(min-width: 381px)"
+                srcset="./assets/home-rewards-banner-medium.gif?v=2.0.10"
+              />
+              <img
+                src="./assets/home-rewards-banner.gif?v=2.0.10"
+                alt="Lucky Spin, spin and win bonus rewards"
+              />
+            </picture>
           </a>
         </div>
       </div>

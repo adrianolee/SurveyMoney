@@ -404,17 +404,23 @@ button:disabled {
 .rewards-banner {
   display: block;
   width: 100%;
-  aspect-ratio: 1774 / 887;
+  height: 146px;
   overflow: hidden;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  background: #fffdf6;
 }
 
+.rewards-banner picture,
 .rewards-banner img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+}
+
+.rewards-banner img {
+  object-fit: cover;
+  object-position: center bottom;
 }
 
 .rewards-banner:focus-visible {
@@ -424,6 +430,12 @@ button:disabled {
 
 .rewards-banner:active {
   transform: scale(0.99);
+}
+
+@media (max-width: 380px) {
+  .rewards-banner {
+    height: 144px;
+  }
 }
 
 .survey-card,
