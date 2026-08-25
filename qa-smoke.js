@@ -103,7 +103,7 @@ const result = vm.runInContext(`
   const homeSpinCardHidden = !homeHtml.includes('class="spin-card"')
     && !homeHtml.includes("Win Cash on Every Spin");
   const rewardsBannerLinkOk = homeHtml.includes('href="https://s.norviques.com/tml?pid=22211&appk=74LD42Jk2xXhhSRlKOTc5wsFHgIVLpct&did="')
-    && homeHtml.includes('src="./assets/home-rewards-banner.gif?v=2.0.8"')
+    && homeHtml.includes('src="./assets/home-rewards-banner.gif?v=2.0.9"')
     && homeHtml.includes('target="_blank"')
     && homeHtml.includes('rel="noopener noreferrer"');
   location.search = "?gaid=click-device";

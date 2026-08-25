@@ -402,7 +402,7 @@ function homePage(state) {
             aria-label="Play Lucky Spin"
           >
             <img
-              src="./assets/home-rewards-banner.gif?v=2.0.8"
+              src="./assets/home-rewards-banner.gif?v=2.0.9"
               alt="Lucky Spin, spin and win bonus rewards"
             />
           </a>
